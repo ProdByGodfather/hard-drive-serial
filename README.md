@@ -1,5 +1,7 @@
 # hard-drive-serial
 How to get hard drive serial using Python
+o get the hard drive serial number in Python on Ubuntu 20.04, you can use the subprocess module to run shell commands and capture their output. One common way to retrieve the serial number is by using the `lsblk` and `udevadm` .
+
 
 ## python code
 ```python
