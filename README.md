@@ -41,3 +41,28 @@ if __name__ == "__main__":
     for device, serial in serials.items():
         print(f"Device: /dev/{device}, Serial: {serial}")
 ```
+
+# CPU-serial-info
+You can also use the cpuinfo package to get the cpu serial.
+```
+pip install py-cpuinfo
+```
+
+## python code
+```python
+import cpuinfo
+
+def get_cpu_serial_number():
+    try:
+        info = cpuinfo.get_cpu_info()
+        serial_number = info.get('serial')
+        if serial_number:
+            return serial_number
+        else:
+            return "Serial number not found or not available without root access"
+    except Exception as e:
+        return str(e)
+
+serial_number = get_cpu_serial_number()
+print(f"CPU Serial Number: {serial_number}")
+```
